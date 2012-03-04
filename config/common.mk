@@ -117,3 +117,9 @@ PRODUCT_PACKAGES += \
 
 # Include vendor overlays
 PRODUCT_PACKAGE_OVERLAYS += vendor/elite/overlay/common
+
+# Backup Tool
+PRODUCT_COPY_FILES += \
+    vendor/elite/prebuilt/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/elite/prebuilt/bin/backuptool.functions:install/bin/backuptool.functions \
+    vendor/elite/prebuilt/bin/50-base.sh:system/addon.d/50-base.sh \
