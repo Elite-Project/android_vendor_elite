@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-else ifeq ($(TARGET_BOOT_ANIMATION_RES),720)
+ifeq ($(TARGET_BOOT_ANIMATION_RES),720)
      PRODUCT_COPY_FILES += vendor/elite/prebuilt/bootanimation/720/bootanimation.zip:system/media/bootanimation.zip
 else ifeq ($(TARGET_BOOT_ANIMATION_RES),1080)
      PRODUCT_COPY_FILES += vendor/elite/prebuilt/bootanimation/1080/bootanimation.zip:system/media/bootanimation.zip
