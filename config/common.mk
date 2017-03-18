@@ -31,3 +31,9 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.adb.secure=0
 endif
 
 export VENDOR := elite
+
+# Include hostapd configuration
+PRODUCT_COPY_FILES += \
+    vendor/elite/prebuilt/etc/hostapd/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf \
+    vendor/elite/prebuilt/etc/hostapd/hostapd.deny:system/etc/hostapd/hostapd.deny \
+    vendor/elite/prebuilt/etc/hostapd/hostapd.accept:system/etc/hostapd/hostapd.accept
