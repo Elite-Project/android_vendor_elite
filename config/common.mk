@@ -40,3 +40,15 @@ PRODUCT_COPY_FILES += \
     vendor/elite/prebuilt/etc/hostapd/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf \
     vendor/elite/prebuilt/etc/hostapd/hostapd.deny:system/etc/hostapd/hostapd.deny \
     vendor/elite/prebuilt/etc/hostapd/hostapd.accept:system/etc/hostapd/hostapd.accept
+
+ifneq ($(HOST_OS),linux)
+ifneq ($(sdclang_already_warned),true)
+$(warning **********************************************)
+$(warning * SDCLANG is not supported on non-linux hosts.)
+$(warning **********************************************)
+sdclang_already_warned := true
+endif
+else
+# include definitions for SDCLANG
+include vendor/elite/sdclang/sdclang.mk
+endif
