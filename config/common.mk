@@ -52,3 +52,6 @@ else
 # include definitions for SDCLANG
 include vendor/elite/sdclang/sdclang.mk
 endif
+
+# Include vendor SEPolicy changes
+include vendor/elite/sepolicy/sepolicy.mk
