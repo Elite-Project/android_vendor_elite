@@ -54,6 +54,11 @@ PRODUCT_COPY_FILES += \
     vendor/elite/prebuilt/etc/hostapd/hostapd.deny:system/etc/hostapd/hostapd.deny \
     vendor/elite/prebuilt/etc/hostapd/hostapd.accept:system/etc/hostapd/hostapd.accept
 
+# We modify several neverallows, so let the build proceed
+ifneq ($(TARGET_BUILD_VARIANT),user)
+SELINUX_IGNORE_NEVERALLOWS := true
+endif
+
 ifneq ($(HOST_OS),linux)
 ifneq ($(sdclang_already_warned),true)
 $(warning **********************************************)
