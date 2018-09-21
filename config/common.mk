@@ -119,6 +119,19 @@ PRODUCT_PACKAGES += \
     ntfsfix \
     ntfs-3g
 
+# Include support for GApps backup
+PRODUCT_COPY_FILES += \
+    vendor/elite/prebuilt/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/elite/prebuilt/bin/backuptool.functions:install/bin/backuptool.functions \
+    vendor/elite/prebuilt/bin/50-backuptool.sh:system/addon.d/50-backuptool.sh
+
+ifeq ($(AB_OTA_UPDATER),true)
+PRODUCT_COPY_FILES += \
+    vendor/elite/prebuilt/bin/backuptool_ab.sh:system/bin/backuptool_ab.sh \
+    vendor/elite/prebuilt/bin/backuptool_ab.functions:system/bin/backuptool_ab.functions \
+    vendor/elite/prebuilt/bin/backuptool_postinstall.sh:system/bin/backuptool_postinstall.sh
+endif
+
 # Include vendor overlays
 PRODUCT_PACKAGE_OVERLAYS += vendor/elite/overlay/common
 
