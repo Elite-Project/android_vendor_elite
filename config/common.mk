@@ -119,7 +119,6 @@ PRODUCT_PACKAGES += \
     ntfsfix \
     ntfs-3g
 
-
 # Include vendor overlays
 PRODUCT_PACKAGE_OVERLAYS += vendor/elite/overlay/common
 
@@ -128,3 +127,6 @@ PRODUCT_COPY_FILES += \
     vendor/elite/prebuilt/bin/backuptool.sh:install/bin/backuptool.sh \
     vendor/elite/prebuilt/bin/backuptool.functions:install/bin/backuptool.functions \
     vendor/elite/prebuilt/bin/50-base.sh:system/addon.d/50-base.sh \
+
+# Disable qmi EAP-SIM security
+DISABLE_EAP_PROXY := true
