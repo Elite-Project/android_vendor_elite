@@ -35,6 +35,10 @@ endif
 
 export VENDOR := elite
 
+# ViaBrowser
+PRODUCT_PACKAGES += \
+    ViaBrowser
+
 # Include hostapd configuration
 PRODUCT_COPY_FILES += \
     vendor/elite/prebuilt/etc/hostapd/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf \
