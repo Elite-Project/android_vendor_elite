@@ -101,3 +101,6 @@ ADDITIONAL_BUILD_PROPERTIES += \
     ro.config.notification_sound=Popcorn.ogg \
     ro.config.alarm_alert=Bright_morning.ogg \
     ro.config.ringtone=Titania.ogg
+
+# Include vendor overlays
+PRODUCT_PACKAGE_OVERLAYS += vendor/elite/overlay/common
