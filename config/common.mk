@@ -55,3 +55,49 @@ endif
 
 # Include vendor SEPolicy changes
 include vendor/elite/sepolicy/sepolicy.mk
+
+# TCP Connection Management
+PRODUCT_PACKAGES += tcmiface
+PRODUCT_BOOT_JARS += tcmiface
+
+# RCS Service
+PRODUCT_PACKAGES += \
+    rcscommon \
+    rcscommon.xml \
+    rcsservice \
+    rcs_service_aidl \
+    rcs_service_aidl.xml \
+    rcs_service_aidl_static \
+    rcs_service_api \
+    rcs_service_api.xml
+
+# Bluetooth Audio (A2DP)
+PRODUCT_PACKAGES += libbthost_if
+
+# MSIM manual provisioning
+PRODUCT_PACKAGES += telephony-ext
+PRODUCT_BOOT_JARS += telephony-ext
+
+# Build WallpaperPicker
+PRODUCT_PACKAGES += WallpaperPicker
+
+# Include explicitly to work around GMS issues
+PRODUCT_PACKAGES += libprotobuf-cpp-full
+
+# Include support for additional filesystems
+PRODUCT_PACKAGES += \
+    e2fsck \
+    mke2fs \
+    tune2fs \
+    mount.exfat \
+    fsck.exfat \
+    mkfs.exfat \
+    ntfsfix \
+    ntfs-3g
+
+
+# Default notification/alarm sounds
+ADDITIONAL_BUILD_PROPERTIES += \
+    ro.config.notification_sound=Popcorn.ogg \
+    ro.config.alarm_alert=Bright_morning.ogg \
+    ro.config.ringtone=Titania.ogg
