@@ -56,6 +56,9 @@ endif
 # Include vendor SEPolicy changes
 include vendor/elite/sepolicy/sepolicy.mk
 
+# Include vendor Branding Stuff
+include vendor/elite/config/branding.mk
+
 # TCP Connection Management
 PRODUCT_PACKAGES += tcmiface
 PRODUCT_BOOT_JARS += tcmiface
@@ -95,12 +98,6 @@ PRODUCT_PACKAGES += \
     ntfsfix \
     ntfs-3g
 
-
-# Default notification/alarm sounds
-ADDITIONAL_BUILD_PROPERTIES += \
-    ro.config.notification_sound=Popcorn.ogg \
-    ro.config.alarm_alert=Bright_morning.ogg \
-    ro.config.ringtone=Titania.ogg
 
 # Include vendor overlays
 PRODUCT_PACKAGE_OVERLAYS += vendor/elite/overlay/common

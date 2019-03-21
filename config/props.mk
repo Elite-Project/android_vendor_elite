@@ -30,3 +30,8 @@ ADDITIONAL_BUILD_PROPERTIES += persist.sys.hideapn=false
 # Allow tethering without provisioning app
 ADDITIONAL_BUILD_PROPERTIES += net.tethering.noprovisioning=true
 
+# Default notification/alarm sounds
+ADDITIONAL_BUILD_PROPERTIES += \
+    ro.config.notification_sound=Popcorn.ogg \
+    ro.config.alarm_alert=Bright_morning.ogg \
+    ro.config.ringtone=Titania.ogg
