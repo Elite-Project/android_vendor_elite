@@ -1,5 +1,5 @@
 # Eite-CAF versions.
-CAF_VERSION := LA.UM.7.3.r1-06900-sdm845.0
+CAF_VERSION := LA.UM.7.3.r1-07400-sdm845.0
 ELITE_VERSION_FLAVOUR := Majesty
 PLATFORM := 9.0
 DATE := $(shell date +"%Y%m%d-%H%M")
