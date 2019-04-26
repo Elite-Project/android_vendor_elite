@@ -39,6 +39,15 @@ export VENDOR := elite
 PRODUCT_PACKAGES += \
     ViaBrowser
 
+#Custom Apps
+PRODUCT_PACKAGES += \
+   Launcher3 \
+   Dialer \
+   Messaging \
+   Contacts \
+   DeskClock \
+   SnapdragonGallery
+
 # Include hostapd configuration
 PRODUCT_COPY_FILES += \
     vendor/elite/prebuilt/etc/hostapd/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf \
