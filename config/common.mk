@@ -63,6 +63,9 @@ include vendor/elite/sepolicy/sepolicy.mk
 # Include vendor Branding Stuff
 include vendor/elite/config/branding.mk
 
+#BootAnimations
+include vendor/elite/config/bootanimation.mk
+
 # TCP Connection Management
 PRODUCT_PACKAGES += tcmiface
 PRODUCT_BOOT_JARS += tcmiface
