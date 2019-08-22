@@ -1,28 +1,28 @@
 #!/sbin/sh
 #
-# Backup and restore addon $S files
+# Backup and restore addon /system files
 #
 
 export C=/tmp/backupdir
-export S=$S
+export S=/system
 
-# Scripts in $S/addon.d expect to find backuptool.functions in /tmp
+# Scripts in /system/addon.d expect to find backuptool.functions in /tmp
 cp -f /tmp/install/bin/backuptool.functions /tmp
 
-# Preserve $S/addon.d in /tmp/addon.d
+# Preserve /system/addon.d in /tmp/addon.d
 preserve_addon_d() {
   mkdir -p /tmp/addon.d/
-  cp -a $S/addon.d/* /tmp/addon.d/
+  cp -a /system/addon.d/* /tmp/addon.d/
   chmod 755 /tmp/addon.d/*.sh
 }
 
-# Restore $S/addon.d in /tmp/addon.d
+# Restore /system/addon.d in /tmp/addon.d
 restore_addon_d() {
-  cp -a /tmp/addon.d/* $S/addon.d/
+  cp -a /tmp/addon.d/* /system/addon.d/
   rm -rf /tmp/addon.d/
 }
 
-# Execute $S/addon.d/*.sh scripts with $1 parameter
+# Execute /system/addon.d/*.sh scripts with $1 parameter
 run_stage() {
 for script in $(find /tmp/addon.d/ -name '*.sh' |sort -n); do
   $script $1
